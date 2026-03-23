@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chess</title>
+</head>
+
+<body>
+
+  <center>
+
+    <table border="1" cellspacing="0">
+
+      <!-- Координати -->
+      <tr>
+        <td width="70" height="70"></td>
+        <td width="70" height="70" align="center">A</td>
+        <td width="70" height="70" align="center">B</td>
+        <td width="70" height="70" align="center">C</td>
+        <td width="70" height="70" align="center">D</td>
+        <td width="70" height="70" align="center">E</td>
+        <td width="70" height="70" align="center">F</td>
+        <td width="70" height="70" align="center">G</td>
+        <td width="70" height="70" align="center">H</td>
+      </tr>
+
+      <tr>
+        <td width="70" height="70" align="center">8</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♜</font>
+        </td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♝</font>
+        </td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♚</font>
+        </td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♞</font>
+        </td>
+        <td align="center">
+          <font size="7">♜</font>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">7</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♟</font>
+        </td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♟</font>
+        </td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">&nbsp;</td>
+        <td align="center">
+          <font size="7">♟</font>
+        </td>
+        <td bgcolor="gray" align="center">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td align="center">6</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">
+          <font size="7">♞</font>
+        </td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♟</font>
+        </td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td align="center">5</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">
+          <font size="7">♙</font>
+        </td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♝</font>
+        </td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td align="center">4</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">
+          <font size="7">♘</font>
+        </td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td align="center">3</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">
+          <font size="7">♙</font>
+        </td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray">&nbsp;</td>
+      </tr>
+
+      <tr>
+        <td align="center">2</td>
+        <td bgcolor="gray" align="center">&nbsp;</td>
+        <td align="center">
+          <font size="7">♙</font>
+        </td>
+        <td bgcolor="gray" align="center">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">&nbsp;</td>
+        <td align="center">
+          <font size="7">♙</font>
+        </td>
+        <td bgcolor="gray" align="center">&nbsp;</td>
+        <td align="center">
+          <font size="7">♙</font>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center">1</td>
+        <td align="center">
+          <font size="7">♖</font>
+        </td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">
+          <font size="7">♗</font>
+        </td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♕</font>
+        </td>
+        <td align="center">
+          <font size="7">♔</font>
+        </td>
+        <td bgcolor="gray">&nbsp;</td>
+        <td align="center">&nbsp;</td>
+        <td bgcolor="gray" align="center">
+          <font size="7">♖</font>
+        </td>
+      </tr>
+
+    </table>
+
+  </center>
+
+  <script>
+    let selectedCell = null;
+
+    const cells = document.querySelectorAll("td");
+
+    cells.forEach(cell => {
+      cell.addEventListener("click", function () {
+
+        const hasPiece = cell.innerHTML.includes("♜") ||
+          cell.innerHTML.includes("♞") ||
+          cell.innerHTML.includes("♝") ||
+          cell.innerHTML.includes("♛") ||
+          cell.innerHTML.includes("♚") ||
+          cell.innerHTML.includes("♟") ||
+          cell.innerHTML.includes("♖") ||
+          cell.innerHTML.includes("♘") ||
+          cell.innerHTML.includes("♗") ||
+          cell.innerHTML.includes("♕") ||
+          cell.innerHTML.includes("♔") ||
+          cell.innerHTML.includes("♙");
+
+        if (!selectedCell && hasPiece) {
+          selectedCell = cell;
+          cell.style.backgroundColor = "yellow";
+          return;
+        }
+
+        if (selectedCell) {
+          cell.innerHTML = selectedCell.innerHTML;
+          selectedCell.innerHTML = "&nbsp;";
+
+          selectedCell.style.backgroundColor = "";
+          selectedCell = null;
+        }
+
+      });
+    });
+  </script>
+</body>
+
+</html>
